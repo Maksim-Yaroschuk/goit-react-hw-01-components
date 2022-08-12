@@ -21,25 +21,17 @@ export const App = () => {
     //     color: '#010101'
     //   }}
     // >
-      <Box
-        display="flex"
-        alignItems="center"
-        justifyContent="space-between"
-      >
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      background="#e7ecf2"
+    >
       <Profile key={user.tag} user={user}
       />
-      </Box>  
-      
-    
-    // 
-//          <section class="statistics">
-//    <h2 class="title">Upload stats</h2>
-//    <ul class="stat-list">
-//            {data.map((dat) => (
-//         <Statistics key={dat.id} title="Upload stats" stats={dat} />))
-//         }
-//           </ul>
-//       </section>
+      <Statistics key="Upload-stats" title="Upload stats" data={data} />
+      <FriendList key="Friend-list" friends={ friends } />
+    </Box>    
 
 //       <ul class="friend-list">
 //         {friends.map((friend) => (

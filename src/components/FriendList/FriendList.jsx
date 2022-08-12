@@ -1,10 +1,20 @@
-export const FriendList = ({ list: { avatar, name, isOnline } }) => {
+import {FriendsContainer, FriendsItem, FriendStats, FriendAvatar, FriendName} from "./FriendList.styles"
+
+export const FriendList = ({ friends }) => {
     return (
-<li class="item">
-            <span class="status">{isOnline}</span>
-  <img class="avatar" src={avatar} alt="User avatar" width="48" />
-            <p class="name">{name}</p>
-</li>
+        <FriendsContainer>
+            {friends.map((friend) => {
+                return <FriendsItem key={friend.id}>
+                    <FriendStats>{friend.isOnline}</FriendStats>
+                    <FriendAvatar
+                      src={friend.avatar}
+                      alt="User avatar"
+                      width="48"  
+                    />
+                    <FriendName>{friend.name}</FriendName>
+                </FriendsItem>
+            })}
+        </FriendsContainer>
     )
 
 }

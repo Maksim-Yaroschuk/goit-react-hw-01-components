@@ -1,10 +1,25 @@
-export const Statistics = ({ stats: { id, label, percentage } }) => {
-    return (
+import { StatTitle, StatList, StatItem, StatLabel, StatPercentage } from "./Statistics.styles"
+import { Box } from "components/Box"
 
-    <li class="item">
-      <span class="label">{label}</span>
-      <span class="percentage">{percentage}</span>
-    </li>
+export const Statistics = ({ data, title }) => {
+  return (
+    <Box
+      as="section"
+      border="1px solid"
+      displax="flex"
+      width="400px"
+      background="white"
+    >
+      <StatTitle>{title.toUpperCase()}</StatTitle>
+        <StatList>
+          {data.map((dat) => {
+     return <StatItem key={dat.id}>
+              <StatLabel>{ dat.label }</StatLabel>
+              <StatPercentage>{ dat.percentage }</StatPercentage>
+            </StatItem>
+          })}
+        </StatList>
+    </Box>  
 
     )
 }
