@@ -1,13 +1,9 @@
 import styled from "styled-components";
 
-export const ProfileContainer = styled.div`
-    border: ${p => p.theme.borders.normal};
-    border-radius: ${p => p.theme.radii.lg}; 
-`
-
 export const DescriptionContainer = styled.div`
     background: ${p => p.theme.colors.white};
-    
+    border-radius: ${p => p.theme.radii.lg};
+    border-bottom-color: white; 
 `;
 
 export const ProfileAvatar = styled.img`
@@ -35,22 +31,25 @@ export const ProfileLocation = styled.p`
     font-size: ${p => p.theme.fontSizes.m};
     color: ${p => p.theme.colors.graytext};
     text-align: center;
+    margin-bottom: ${p => p.theme.space[5]}px;
 `
 export const ProfileStats = styled.ul`
-    background-color: ${p => p.theme.colors.gratbackprim};
-    margin-top: ${p => p.theme.space[5]}px;
+    background-color: ${p => p.theme.colors.graytext};
+    margin-top: ${p => p.theme.space[0]}px;
     padding-left: 0px;
     display: flex;
     justify-content: space-between;
+    border-top: ${p => p.theme.borders.normal};
+    border-top-color: ${p => p.theme.colors.gratbackprim};
 `
 export const ProfileStatsEl = styled.li`
-    border: ${p => p.theme.borders.normal};
+    background-color: ${p => p.theme.colors.gratbackprim};
     padding-top: ${p => p.theme.space[4]}px;
     padding-bottom: ${p => p.theme.space[4]}px;
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    width: 33.3%;
+    width: 33.4%;
     text-align: center;
 `
 export const ProfileStatsLabel = styled.span`

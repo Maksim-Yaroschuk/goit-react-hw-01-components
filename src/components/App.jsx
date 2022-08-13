@@ -1,4 +1,3 @@
-import { GlobalStyle } from './GlobalStyle'
 import { Box } from './Box'
 import { Profile } from './Profile/Profile'
 import { Statistics } from './Statistics/Statistics'
@@ -11,53 +10,16 @@ import transactions from 'data/transactions.json'
 
 export const App = () => {
   return (
-    // <div
-    //   style={{
-    //     height: '100vh',
-    //     display: 'flex',
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    //     fontSize: 40,
-    //     color: '#010101'
-    //   }}
-    // >
     <Box
       display="flex"
       flexDirection="column"
       alignItems="center"
       background="#e7ecf2"
     >
-      <Profile key={user.tag} user={user}
-      />
+      <Profile key={user.tag} user={user} />
       <Statistics key="Upload-stats" title="Upload stats" data={data} />
-      <FriendList key="Friend-list" friends={ friends } />
+      <FriendList key="Friend-list" friends={friends} />
+      <Transaction key="Transaction" transactions={transactions} />
     </Box>    
-
-//       <ul class="friend-list">
-//         {friends.map((friend) => (
-//           <FriendList key={friend.id} list={friend} />
-// ))}
-//       </ul>
-      
-// <table class="transaction-history">
-//   <thead>
-//     <tr>
-//       <th>Type</th>
-//       <th>Amount</th>
-//       <th>Currency</th>
-//     </tr>
-//   </thead>
-//         <tbody>
-
-//           {transactions.map((transaction) => (
-//             <Transaction key={transaction.id} transaction={transaction} />
-//       ))}
-
-//   </tbody>
-// </table>
-
-    // </div>
-
-
   );
 };

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types"
 import { StatTitle, StatList, StatItem, StatLabel, StatPercentage } from "./Statistics.styles"
 import { Box } from "components/Box"
 
@@ -5,7 +6,6 @@ export const Statistics = ({ data, title }) => {
   return (
     <Box
       as="section"
-      border="1px solid"
       displax="flex"
       width="400px"
       background="white"
@@ -23,3 +23,8 @@ export const Statistics = ({ data, title }) => {
 
     )
 }
+
+Statistics.propTypes = {
+  data: PropTypes.array.isRequired,
+  title: PropTypes.string.isRequired,
+};
