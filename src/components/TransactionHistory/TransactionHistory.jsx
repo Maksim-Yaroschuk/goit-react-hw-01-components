@@ -1,8 +1,15 @@
-import PropTypes from "prop-types"
-import { THead, TBody, TRows, Th, Td, Table } from "./TransactionHistory.styles"
+import PropTypes from 'prop-types';
+import {
+  THead,
+  TBody,
+  TRows,
+  Th,
+  Td,
+  Table,
+} from './TransactionHistory.styles';
 
 export const Transaction = ({ transactions }) => {
-  const keys = Object.keys(transactions[0])
+  const keys = Object.keys(transactions[0]);
   return (
     <Table>
       <THead>
@@ -14,17 +21,19 @@ export const Transaction = ({ transactions }) => {
       </THead>
       <TBody>
         {transactions.map(({ id, type, amount, currency }) => {
-          return <TRows key={id}>
-            <Td>{type}</Td>
-            <Td>{amount}</Td>
-            <Td>{currency}</Td>
-          </TRows>
+          return (
+            <TRows key={id}>
+              <Td>{type}</Td>
+              <Td>{amount}</Td>
+              <Td>{currency}</Td>
+            </TRows>
+          );
         })}
       </TBody>
     </Table>
-  )
+  );
 };
 
 Transaction.propTypes = {
   transactions: PropTypes.array.isRequired,
-}
+};
