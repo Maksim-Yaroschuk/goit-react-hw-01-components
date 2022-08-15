@@ -13,11 +13,11 @@ export const Statistics = ({ data, title }) => {
     <Box as="section" displax="flex" width="400px" background="white">
       <StatTitle>{title.toUpperCase()}</StatTitle>
       <StatList>
-        {data.map(dat => {
+        {data.map(({ id, label, percentage }) => {
           return (
-            <StatItem key={dat.id}>
-              <StatLabel>{dat.label}</StatLabel>
-              <StatPercentage>{dat.percentage}</StatPercentage>
+            <StatItem key={id}>
+              <StatLabel>{label}</StatLabel>
+              <StatPercentage>{percentage}</StatPercentage>
             </StatItem>
           );
         })}
@@ -28,5 +28,11 @@ export const Statistics = ({ data, title }) => {
 
 Statistics.propTypes = {
   data: PropTypes.array.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 };
+
+// shape({
+//     id: PropTypes.string.isRequired,
+//     label: PropTypes.string.isRequired,
+//     percentage: PropTypes.number.isRequired,
+//   })

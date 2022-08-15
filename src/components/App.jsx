@@ -17,10 +17,16 @@ export const App = () => {
         alignItems="center"
         background="#e7ecf2"
       >
-        <Profile key={user.tag} user={user} />
-        <Statistics key="Upload-stats" title="Upload stats" data={data} />
-        <FriendList key="Friend-list" friends={friends} />
-        <Transaction key="Transaction" transactions={transactions} />
+        <Profile
+          username={user.username}
+          tag={user.tag}
+          location={user.location}
+          avatar={user.avatar}
+          stats={user.stats}
+        />
+        <Statistics title="Upload stats" data={data} />
+        <FriendList friends={friends} />
+        <Transaction transactions={transactions} />
       </Box>
     </>
   );

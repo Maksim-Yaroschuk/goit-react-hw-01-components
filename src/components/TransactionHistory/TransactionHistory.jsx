@@ -37,3 +37,11 @@ export const Transaction = ({ transactions }) => {
 Transaction.propTypes = {
   transactions: PropTypes.array.isRequired,
 };
+
+
+// shape({
+//     id: PropTypes.string.isRequired,
+//     type: PropTypes.string.isRequired,
+//     amount: PropTypes.string.isRequired,
+//     currency: PropTypes.string.isRequired,
+//   }).
