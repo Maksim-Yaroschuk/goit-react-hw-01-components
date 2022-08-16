@@ -11,7 +11,7 @@ import { Box } from 'components/Box';
 export const Statistics = ({ data, title }) => {
   return (
     <Box as="section" displax="flex" width="400px" background="white">
-      <StatTitle>{title.toUpperCase()}</StatTitle>
+      {title && <StatTitle>{title.toUpperCase()}</StatTitle>}
       <StatList>
         {data.map(({ id, label, percentage }) => {
           return (
@@ -27,12 +27,12 @@ export const Statistics = ({ data, title }) => {
 };
 
 Statistics.propTypes = {
-  data: PropTypes.array.isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ).isRequired,
   title: PropTypes.string,
 };
-
-// shape({
-//     id: PropTypes.string.isRequired,
-//     label: PropTypes.string.isRequired,
-//     percentage: PropTypes.number.isRequired,
-//   })
